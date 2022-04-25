@@ -35,6 +35,7 @@ const MoviesPage = ({mediastuff}) => {
               category={media.category}
               rating={media.rating}
               title={media.title}
+              key={media.id}
             />
           ))}
       </MediaContainer>

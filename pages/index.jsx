@@ -39,6 +39,7 @@ export default function Home({mediastuff}) {
               title={media.title}
               small={media.thumbnail.trending.small}
               large={media.thumbnail.trending.large}
+              key={media.id}
             />
           ))}
       </TrendingContainer>
@@ -56,6 +57,7 @@ export default function Home({mediastuff}) {
               category={media.category}
               rating={media.rating}
               title={media.title}
+              key={media.id}
             />
           ))}
       </MediaContainer>
