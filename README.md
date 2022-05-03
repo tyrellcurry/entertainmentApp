@@ -27,7 +27,6 @@ Users should be able to:
 - Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
 - Add/Remove bookmarks from all movies and TV series
 - Search for relevant shows on all pages
-- **Bonus**: Build this project as a full-stack application
 
 ### Screenshot
 
@@ -48,10 +47,8 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [MongoDB](https://www.mongodb.com/) - Database
 - [Node.js](https://nodejs.org/en/) -JS Runtime
 - [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
-- [Framer Motion](https://www.framer.com/motion/) - Animation Styles
 
 ### What I learned
 
