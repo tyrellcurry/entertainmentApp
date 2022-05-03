@@ -1,34 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Entertainment Web App
 
-## Getting Started
+## Checkout The Live Project: [HERE!](https://entertainment-app-xi.vercel.app/)
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### The challenge
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Users should be able to:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
+- Add/Remove bookmarks from all movies and TV series
+- Search for relevant shows on all pages
+- **Bonus**: Build this project as a full-stack application
 
-## Learn More
+### Screenshot
 
-To learn more about Next.js, take a look at the following resources:
+![](./screenshots/desktop.png)
+![](./screenshots/tablet.png)
+![](./screenshots/mobile.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Live Site URL: [Vercel](https://entertainment-app-xi.vercel.app/)
 
-## Deploy on Vercel
+## My process
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Built with
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+- [MongoDB](https://www.mongodb.com/) - Database
+- [Node.js](https://nodejs.org/en/) -JS Runtime
+- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+- [Framer Motion](https://www.framer.com/motion/) - Animation Styles
+
+### What I learned
+
+- Collaboration utilizing a best practise GIT workflow
+- Working with Next.js
+- Using React Props to pass data between components
+- Working with local JSON data to populate components while designing the app
+- Configuring different hover and click effects using State
+
+### Continued development
+
+This project really helped me gain a better understanding of working with props in React and creating reusable components.
+
+### Useful resources
+
+- [React - Components and Props](https://reactjs.org/docs/components-and-props.html)
+
+## Author
+
+- Website - [Tyrell Curry](https://entertainment-app-xi.vercel.app/)
+
+## Acknowledgments
+
+Special thanks to [Rodderick Garland](https://github.com/zencoder24) for collaborating on the project.
