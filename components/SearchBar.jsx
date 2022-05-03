@@ -15,7 +15,7 @@ const SearchBar = ({placholderText, onChange, setSearchVal, searchVal}) => {
       </label>
       <h1
         className={`${
-          searchVal.length == 0 ? 'hidden' : 'block'
+          (searchVal || []).length == 0 ? 'hidden' : 'block'
         } text-xl mt-2 ml-4 md:text-3xl`}
       >
         {' '}
