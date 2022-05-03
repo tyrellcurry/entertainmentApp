@@ -1,6 +1,6 @@
 # Entertainment Web App
 
-## Checkout The Live Project: [HERE!](https://entertainment-app-xi.vercel.app/)
+## Checkout The Live Project: [HERE!](https://entertainment-app-tyrell.netlify.app/)
 
 ## Table of contents
 
@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Vercel](https://entertainment-app-xi.vercel.app/)
+- Live Site URL: [Netlify](https://entertainment-app-tyrell.netlify.app/)
 
 ## My process
 
@@ -71,7 +71,7 @@ This project really helped me gain a better understanding of working with props 
 
 ## Author
 
-- Website - [Tyrell Curry](https://entertainment-app-xi.vercel.app/)
+- Website - [Tyrell Curry](https://tyrellcurry.io)
 
 ## Acknowledgments
 
