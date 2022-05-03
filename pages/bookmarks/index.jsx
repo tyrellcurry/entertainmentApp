@@ -31,7 +31,10 @@ export default function BookmarksPage({mediastuff}) {
       >
         {mediastuff
           .filter(
-            (media) => media.category === 'Movie' && media.isBookmarked === true
+            (item) =>
+              item.category === 'Movie' &&
+              item.isBookmarked === true &&
+              item.title.toLowerCase().includes(searchVal.toLowerCase())
           )
           .map((media) => (
             <MediaCards
@@ -50,8 +53,10 @@ export default function BookmarksPage({mediastuff}) {
       <MediaContainer searchVal={searchVal} title={'Bookmarked TV Series'}>
         {mediastuff
           .filter(
-            (media) =>
-              media.category === 'TV Series' && media.isBookmarked === true
+            (item) =>
+              item.category === 'TV Series' &&
+              item.isBookmarked === true &&
+              item.title.toLowerCase().includes(searchVal.toLowerCase())
           )
           .map((media) => (
             <MediaCards

@@ -25,7 +25,11 @@ const MoviesPage = ({mediastuff}) => {
 
       <MediaContainer searchVal={searchVal} title={'Movies'}>
         {mediastuff
-          .filter((media) => media.category === 'Movie')
+          .filter(
+            (item) =>
+              item.category === 'Movie' &&
+              item.title.toLowerCase().includes(searchVal.toLowerCase())
+          )
           .map((media) => (
             <MediaCards
               small={media.thumbnail.regular.small}

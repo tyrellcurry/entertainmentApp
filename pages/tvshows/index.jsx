@@ -27,7 +27,11 @@ export default function TvShowsPage({mediastuff}) {
       {/** Trending Component */}
       <MediaContainer searchVal={searchVal} title={'TV Series'}>
         {mediastuff
-          .filter((media) => media.category === 'TV Series')
+          .filter(
+            (item) =>
+              item.category === 'TV Series' &&
+              item.title.toLowerCase().includes(searchVal.toLowerCase())
+          )
           .map((media) => (
             <MediaCards
               small={media.thumbnail.regular.small}

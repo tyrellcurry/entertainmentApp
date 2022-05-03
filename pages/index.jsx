@@ -30,7 +30,7 @@ export default function Home({mediastuff}) {
       {/** Trending Component */}
       <TrendingContainer searchVal={searchVal} title={'Trending'}>
         {mediastuff
-          .filter((media) => media.isTrending === true)
+          .filter((item) => item.isTrending)
           .map((media) => (
             <TrendingCards
               year={media.year}
@@ -47,7 +47,11 @@ export default function Home({mediastuff}) {
       {/** Trending Component */}
       <MediaContainer searchVal={searchVal} title={'Recommended for you'}>
         {mediastuff
-          .filter((media) => media.isTrending === false)
+          .filter((item) =>
+            searchVal
+              ? item.title.toLowerCase().includes(searchVal.toLowerCase())
+              : item.isTrending === false
+          )
           .map((media) => (
             <MediaCards
               small={media.thumbnail.regular.small}
