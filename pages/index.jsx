@@ -39,6 +39,7 @@ export default function Home({mediastuff}) {
               title={media.title}
               small={media.thumbnail.trending.small}
               large={media.thumbnail.trending.large}
+              mediaId={media.id}
               key={media.id}
             />
           ))}
@@ -52,7 +53,8 @@ export default function Home({mediastuff}) {
               ? item.title.toLowerCase().includes(searchVal.toLowerCase())
               : item.isTrending === false
           )
-          .map((media) => (
+          .map((media) => {
+            return (
             <MediaCards
               small={media.thumbnail.regular.small}
               medium={media.thumbnail.regular.medium}
@@ -61,9 +63,10 @@ export default function Home({mediastuff}) {
               category={media.category}
               rating={media.rating}
               title={media.title}
+              mediaId={media.id}
               key={media.id}
             />
-          ))}
+          )})}
       </MediaContainer>
     </>
   );
