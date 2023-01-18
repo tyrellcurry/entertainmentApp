@@ -17,8 +17,7 @@
     "category": "Movie",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": true,
-    "id": 1
+    "isTrending": true
   },
   {
     "title": "Bottom Gear",
@@ -37,8 +36,7 @@
     "category": "Movie",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": true,
-    "id": 2
+    "isTrending": true
   },
   {
     "title": "Undiscovered Cities",
@@ -57,8 +55,7 @@
     "category": "TV Series",
     "rating": "E",
     "isBookmarked": false,
-    "isTrending": true,
-    "id": 3
+    "isTrending": true
   },
   {
     "title": "1998",
@@ -77,8 +74,7 @@
     "category": "Movie",
     "rating": "18+",
     "isBookmarked": false,
-    "isTrending": true,
-    "id": 4
+    "isTrending": true
   },
   {
     "title": "Dark Side of the Moon",
@@ -97,8 +93,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": true,
-    "isTrending": true,
-    "id": 5
+    "isTrending": true
   },
   {
     "title": "The Great Lands",
@@ -113,8 +108,7 @@
     "category": "Movie",
     "rating": "E",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 6
+    "isTrending": false
   },
   {
     "title": "The Diary",
@@ -129,8 +123,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 7
+    "isTrending": false
   },
   {
     "title": "Earth’s Untouched",
@@ -145,8 +138,7 @@
     "category": "Movie",
     "rating": "18+",
     "isBookmarked": true,
-    "isTrending": false,
-    "id":8
+    "isTrending": false
   },
   {
     "title": "No Land Beyond",
@@ -161,8 +153,7 @@
     "category": "Movie",
     "rating": "E",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 90
+    "isTrending": false
   },
   {
     "title": "During the Hunt",
@@ -177,8 +168,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 9
+    "isTrending": false
   },
   {
     "title": "Autosport the Series",
@@ -193,8 +183,7 @@
     "category": "TV Series",
     "rating": "18+",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 10
+    "isTrending": false
   },
   {
     "title": "Same Answer II",
@@ -209,8 +198,7 @@
     "category": "Movie",
     "rating": "E",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 11
+    "isTrending": false
   },
   {
     "title": "Below Echo",
@@ -225,8 +213,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 12
+    "isTrending": false
   },
   {
     "title": "The Rockies",
@@ -241,8 +228,7 @@
     "category": "TV Series",
     "rating": "E",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 13
+    "isTrending": false
   },
   {
     "title": "Relentless",
@@ -257,8 +243,7 @@
     "category": "Movie",
     "rating": "PG",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 14
+    "isTrending": false
   },
   {
     "title": "Community of Ours",
@@ -273,8 +258,7 @@
     "category": "TV Series",
     "rating": "18+",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 15
+    "isTrending": false
   },
   {
     "title": "Van Life",
@@ -289,8 +273,7 @@
     "category": "Movie",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 16
+    "isTrending": false
   },
   {
     "title": "The Heiress",
@@ -305,8 +288,7 @@
     "category": "Movie",
     "rating": "PG",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 17
+    "isTrending": false
   },
   {
     "title": "Off the Track",
@@ -321,8 +303,7 @@
     "category": "Movie",
     "rating": "18+",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 18
+    "isTrending": false
   },
   {
     "title": "Whispering Hill",
@@ -337,8 +318,7 @@
     "category": "Movie",
     "rating": "E",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 19
+    "isTrending": false
   },
   {
     "title": "112",
@@ -353,8 +333,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 20
+    "isTrending": false
   },
   {
     "title": "Lone Heart",
@@ -369,8 +348,7 @@
     "category": "Movie",
     "rating": "E",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 21
+    "isTrending": false
   },
   {
     "title": "Production Line",
@@ -385,8 +363,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 22
+    "isTrending": false
   },
   {
     "title": "Dogs",
@@ -401,8 +378,7 @@
     "category": "TV Series",
     "rating": "E",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 23
+    "isTrending": false
   },
   {
     "title": "Asia in 24 Days",
@@ -417,8 +393,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 24
+    "isTrending": false
   },
   {
     "title": "The Tasty Tour",
@@ -433,8 +408,7 @@
     "category": "TV Series",
     "rating": "PG",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 25
+    "isTrending": false
   },
   {
     "title": "Darker",
@@ -449,8 +423,7 @@
     "category": "Movie",
     "rating": "18+",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 26
+    "isTrending": false
   },
   {
     "title": "Unresolved Cases",
@@ -465,8 +438,7 @@
     "category": "TV Series",
     "rating": "18+",
     "isBookmarked": false,
-    "isTrending": false,
-    "id": 27
+    "isTrending": false
   },
   {
     "title": "Mission: Saturn",
@@ -481,7 +453,6 @@
     "category": "Movie",
     "rating": "PG",
     "isBookmarked": true,
-    "isTrending": false,
-    "id": 28
+    "isTrending": false
   }
  ]
