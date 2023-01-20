@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 require("dotenv").config();
 
-const uri = `mongodb+srv://tyrellc:${process.env.MONGO_PASSWORD}@entertainmentapp.jtcf92n.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://tyrellc:${process.env.MONGO_PASSWORD}@entertainmentapp.jtcf92n.mongodb.net/entertainment?retryWrites=true&w=majority`;
 
 async function connect() {
   try {
@@ -43,7 +43,7 @@ const collectionSchema = new mongoose.Schema({
   isTrending: { type: Boolean, default: true },
 });
 
-const Collection = mongoose.model("Collection", collectionSchema, "media");
+const Collection = mongoose.model("Collection", collectionSchema, "medias");
 
 app.get("/data", async (req, res) => {
   const data = await Collection.find();
