@@ -1,19 +1,20 @@
 import React from 'react';
 import {useState} from 'react';
 import SearchBar from '../../components/SearchBar';
-import mediaItems from '../../public/data.json';
 import MediaContainer from '../../components/MediaContainer';
 import MediaCards from '../../components/MediaCards';
 
-export const getStaticProps = async () => {
-  return {
-    props: {
-      mediastuff: mediaItems,
-    },
-  };
-};
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`http://localhost:8000/data`)
+  const mediaData = await res.json()
 
-export default function TvShowsPage({mediastuff}) {
+  // Pass data to the page via props
+  return { props: { mediaData } }
+}
+
+export default function TvShowsPage({mediaData}) {
   const [searchVal, setSearchVal] = useState('');
 
   return (
@@ -26,7 +27,7 @@ export default function TvShowsPage({mediastuff}) {
 
       {/** Trending Component */}
       <MediaContainer searchVal={searchVal} title={'TV Series'}>
-        {mediastuff
+        {mediaData
           .filter(
             (item) =>
               item.category === 'TV Series' &&
@@ -41,7 +42,7 @@ export default function TvShowsPage({mediastuff}) {
               category={media.category}
               rating={media.rating}
               title={media.title}
-              key={media.id}
+              key={media._id}
             />
           ))}
       </MediaContainer>

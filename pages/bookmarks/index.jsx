@@ -1,19 +1,20 @@
 import React from 'react';
 import {useState} from 'react';
 import SearchBar from '../../components/SearchBar';
-import mediaItems from '../../public/data.json';
 import MediaContainer from '../../components/MediaContainer';
 import MediaCards from '../../components/MediaCards';
 
-export const getStaticProps = async () => {
-  return {
-    props: {
-      mediastuff: mediaItems,
-    },
-  };
-};
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`http://localhost:8000/data`)
+  const mediaData = await res.json()
 
-export default function BookmarksPage({mediastuff}) {
+  // Pass data to the page via props
+  return { props: { mediaData } }
+}
+
+export default function BookmarksPage({mediaData}) {
   const [searchVal, setSearchVal] = useState('');
 
   return (
@@ -27,9 +28,8 @@ export default function BookmarksPage({mediastuff}) {
       <MediaContainer
         searchVal={searchVal}
         title={'Bookmarked Movies'}
-        key={mediastuff}
       >
-        {mediastuff
+        {mediaData
           .filter(
             (item) =>
               item.category === 'Movie' &&
@@ -45,13 +45,13 @@ export default function BookmarksPage({mediastuff}) {
               category={media.category}
               rating={media.rating}
               title={media.title}
-              key={media.id}
+              key={media._id}
             />
           ))}
       </MediaContainer>
 
       <MediaContainer searchVal={searchVal} title={'Bookmarked TV Series'}>
-        {mediastuff
+        {mediaData
           .filter(
             (item) =>
               item.category === 'TV Series' &&
@@ -67,7 +67,7 @@ export default function BookmarksPage({mediastuff}) {
               category={media.category}
               rating={media.rating}
               title={media.title}
-              key={media.id}
+              key={media._id}
             />
           ))}
       </MediaContainer>

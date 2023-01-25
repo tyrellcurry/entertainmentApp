@@ -1,24 +1,24 @@
 import SearchBar from '../components/SearchBar';
-import mediaItems from '../public/data.json';
 import MediaCards from '../components/MediaCards';
 import MediaContainer from '../components/MediaContainer';
 import TrendingCards from '../components/TrendingCards';
 import TrendingContainer from '../components/TrendingContainer';
 import {useState} from 'react';
 
-/**TODO: Need to add keys to the the json file. */
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`http://localhost:8000/data`)
+  const mediaData = await res.json()
 
-export const getStaticProps = async () => {
-  return {
-    props: {
-      mediastuff: mediaItems,
-    },
-  };
-};
+  // Pass data to the page via props
+  return { props: { mediaData } }
+}
 
-export default function Home({mediastuff}) {
+export default function Home({mediaData}) {
   const [searchVal, setSearchVal] = useState('');
 
+  console.log(mediaData)
   return (
     <>
       <SearchBar
@@ -29,9 +29,10 @@ export default function Home({mediastuff}) {
 
       {/** Trending Component */}
       <TrendingContainer searchVal={searchVal} title={'Trending'}>
-        {mediastuff
+        {mediaData
           .filter((item) => item.isTrending)
           .map((media) => (
+            console.log(media._id),
             <TrendingCards
               year={media.year}
               category={media.category}
@@ -39,15 +40,14 @@ export default function Home({mediastuff}) {
               title={media.title}
               small={media.thumbnail.trending.small}
               large={media.thumbnail.trending.large}
-              mediaId={media.id}
-              key={media.id}
+              key={media._id}
             />
           ))}
       </TrendingContainer>
 
       {/** Trending Component */}
       <MediaContainer searchVal={searchVal} title={'Recommended for you'}>
-        {mediastuff
+        {mediaData
           .filter((item) =>
             searchVal
               ? item.title.toLowerCase().includes(searchVal.toLowerCase())
@@ -63,8 +63,7 @@ export default function Home({mediastuff}) {
               category={media.category}
               rating={media.rating}
               title={media.title}
-              mediaId={media.id}
-              key={media.id}
+              key={media._id}
             />
           )})}
       </MediaContainer>
