@@ -5,7 +5,7 @@ const nextConfig = {
 
 module.exports = {
   env: {
-    Next_APP_API_HOST:'https://entertainment-8pil2rk5t-tyrellcurry.vercel.app/',
+    Next_APP_API_HOST:'https://entertainment-xpmqrq38x-tyrellcurry.vercel.app/api/',
   },
   nextConfig,
   webpack(config) {
