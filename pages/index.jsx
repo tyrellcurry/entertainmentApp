@@ -41,6 +41,8 @@ export default function Home({mediaData}) {
               small={media.thumbnail.trending.small}
               large={media.thumbnail.trending.large}
               key={media._id}
+              mediaID={media._id}
+              bookmarked={media.isBookmarked}
             />
           ))}
       </TrendingContainer>
@@ -64,6 +66,8 @@ export default function Home({mediaData}) {
               rating={media.rating}
               title={media.title}
               key={media._id}
+              mediaID={media._id}
+              bookmarked={media.isBookmarked}
             />
           )})}
       </MediaContainer>

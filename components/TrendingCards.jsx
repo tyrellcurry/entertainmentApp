@@ -1,10 +1,24 @@
 import React, {useState} from 'react';
-const TrendingCards = ({year, category, rating, title, small, large}) => {
-  const [isBookmarked, setIsBookmarked] = useState(false);
+const TrendingCards = ({year, category, rating, title, small, large, mediaID, bookmarked}) => {
+  const [isBookmarked, setIsBookmarked] = useState(bookmarked);
   const [bookmarkHover, setBookmarkHover] = useState();
   const [bookmarkIconHover, setBookmarkIconHover] = useState();
   const [playHover, setPlayHover] = useState(false);
   const [imgHover, setImgHover] = useState('');
+
+  async function updateIsBookmarked(id, isBookmarked) {
+    try {
+      const response = await fetch(`http://localhost:8000/data/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isBookmarked })
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div
@@ -55,7 +69,14 @@ const TrendingCards = ({year, category, rating, title, small, large}) => {
         </div>
         <div
           className={`bg-x-mirage w-6 h-6 flex justify-self-end rounded-full mr-4 my-2 mx-auto opacity-70 md:w-10 md:h-10 md:mt-3 md:mr-3 absolute ${bookmarkHover}`}
-          onClick={(e) => setIsBookmarked(!isBookmarked)}
+          onClick={(e) => 
+            {
+              setIsBookmarked(!isBookmarked)
+              bookmarked ?
+              updateIsBookmarked(mediaID, false)
+                :
+              updateIsBookmarked(mediaID, true)
+            }}
           onMouseEnter={() => {
             window.innerWidth > 768
               ? setBookmarkHover('bg-x-white-bk opacity-100')

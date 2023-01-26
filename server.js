@@ -2,8 +2,20 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 require("dotenv").config();
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
-const uri = `mongodb+srv://tyrellc:${process.env.MONGO_PASSWORD}@entertainmentapp.jtcf92n.mongodb.net/entertainment?retryWrites=true&w=majority`;
+const corsOptions = {
+  origin: process.env.CORS_URL,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
+
+app.use(bodyParser.json());
+
+const uri = `${process.env.MONGODB_URI}`;
 
 async function connect() {
   try {
@@ -18,8 +30,8 @@ mongoose.set("strictQuery", false);
 
 connect();
 
-app.listen(8000, () => {
-  console.log("Express Server Started port:8000");
+app.listen(process.env.PROD_URL, () => {
+  console.log(`Express Server Started port:${process.env.PROD_URL}`);
 });
 
 const collectionSchema = new mongoose.Schema({
@@ -49,3 +61,34 @@ app.get("/data", async (req, res) => {
   const data = await Collection.find();
   res.json(data);
 });
+
+app.get("/data/:id", async (req, res) => {
+  const id = req.params.id;
+  if(!mongoose.Types.ObjectId.isValid(id)) {
+    res.status(404).json({ message: 'Invalid ID' });
+    return;
+  }
+  try {
+    const data = await Collection.findOne({ _id: id });
+    if(!data) {
+      res.status(404).json({ message: 'Data not found' });
+    } else {
+      res.json(data);
+    }
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
+app.put("/data/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const update = req.body;
+    const data = await Collection.findOneAndUpdate({ _id: id }, update, { new: true });
+    res.json(data);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
+

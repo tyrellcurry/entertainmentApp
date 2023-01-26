@@ -8,15 +8,30 @@ export default function MediaCards({
   category,
   rating,
   title,
-  mediaId
+  mediaID,
+  bookmarked
 }) {
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  
+  const [isBookmarked, setIsBookmarked] = useState(bookmarked);
+
   //Hover states, these will be passed as class variables or as booleans (to display elements):
   const [bookmarkHover, setBookmarkHover] = useState();
   const [bookmarkIconHover, setBookmarkIconHover] = useState();
   const [playHover, setPlayHover] = useState(false);
   const [imgHover, setImgHover] = useState('');
+
+  async function updateIsBookmarked(id, isBookmarked) {
+    try {
+      const response = await fetch(`http://localhost:8000/data/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isBookmarked })
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="card">
@@ -46,7 +61,11 @@ export default function MediaCards({
             className={`bg-x-mirage z-10 absolute w-6 h-6 flex justify-center items-center rounded-full mt-1 mr-1 opacity-70 md:w-10 md:h-10 md:mt-3 md:mr-3 ${bookmarkHover}`}
             onClick={(e) => 
               {
-                setIsBookmarked(!isBookmarked);
+                setIsBookmarked(!isBookmarked)
+                bookmarked ?
+                updateIsBookmarked(mediaID, false)
+                  :
+                updateIsBookmarked(mediaID, true)
               }}
             // On mouse enter, if screen is bigger than md, add these classes to the BookmarkIconHover state
             onMouseEnter={() => {

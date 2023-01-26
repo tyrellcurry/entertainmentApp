@@ -43,6 +43,8 @@ export default function TvShowsPage({mediaData}) {
               rating={media.rating}
               title={media.title}
               key={media._id}
+              mediaID={media._id}
+              bookmarked={media.isBookmarked}
             />
           ))}
       </MediaContainer>
