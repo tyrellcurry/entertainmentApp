@@ -8,7 +8,7 @@ import {useState} from 'react';
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`http://localhost:8000/data`)
+  const res = await fetch(`${process.env.Next_APP_API_HOST}/data`)
   const mediaData = await res.json()
 
   // Pass data to the page via props
@@ -18,7 +18,6 @@ export async function getServerSideProps() {
 export default function Home({mediaData}) {
   const [searchVal, setSearchVal] = useState('');
 
-  console.log(mediaData)
   return (
     <>
       <SearchBar
@@ -32,7 +31,6 @@ export default function Home({mediaData}) {
         {mediaData
           .filter((item) => item.isTrending)
           .map((media) => (
-            console.log(media._id),
             <TrendingCards
               year={media.year}
               category={media.category}

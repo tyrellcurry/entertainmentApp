@@ -4,6 +4,9 @@ const nextConfig = {
 };
 
 module.exports = {
+  env: {
+    Next_APP_API_HOST:'https://entertainment-8pil2rk5t-tyrellcurry.vercel.app/',
+  },
   nextConfig,
   webpack(config) {
     config.module.rules.push({
