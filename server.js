@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: 'https://entertainment-app-eight.vercel.app/',
+  origin: 'https://entertainment-app-eight.vercel.app',
   optionsSuccessStatus: 200
 };
 
