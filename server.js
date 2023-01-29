@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: process.env.CORS_URL,
+  origin: 'https://entertainment-app-eight.vercel.app/',
   optionsSuccessStatus: 200
 };
 
@@ -30,8 +30,8 @@ mongoose.set("strictQuery", false);
 
 connect();
 
-app.listen(process.env.PROD_URL, () => {
-  console.log(`Express Server Started port:${process.env.PROD_URL}`);
+app.listen(process.env.PORT || 8000, () => {
+  console.log("Express Server Started port:8000");
 });
 
 const collectionSchema = new mongoose.Schema({
