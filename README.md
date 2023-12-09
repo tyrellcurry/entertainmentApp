@@ -1,6 +1,6 @@
 # Entertainment Web App
 
-## Checkout The Live Project: [HERE!](https://entertainment-app-tyrell.netlify.app/)
+## Checkout The Live Project: [HERE!](https://entertainment-app-xi.vercel.app/)
 
 ## Table of contents
 
@@ -33,10 +33,6 @@ Users should be able to:
 ![](./screenshots/desktop.png)
 ![](./screenshots/tablet.png)
 ![](./screenshots/mobile.png)
-
-### Links
-
-- Live Site URL: [Netlify](https://entertainment-app-tyrell.netlify.app/)
 
 ## My process
 
