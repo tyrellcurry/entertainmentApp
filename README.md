@@ -1,9 +1,11 @@
-# Entertainment Web App
+# Entertainment Web App 
+
+A full stack mock entertainment app utilizing OpenAI built with React and Tailwind on the frontend and MongoBD on the backend.
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Features](#the-challenge)
   - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -13,7 +15,7 @@
 
 ## Overview
 
-### The challenge
+### Features
 
 Users should be able to:
 
