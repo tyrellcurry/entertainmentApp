@@ -100,16 +100,17 @@ app.post("/api/ai", async (req, res) => {
       "https://api.openai.com/v1/chat/completions",
       {
         model: "gpt-3.5-turbo-0125",
-        "messages": [
+        messages: [
           {
-            "role": "system",
-            "content": "You are creating a short and exciting movie trailer. You are outputting only sentences."
+            role: "system",
+            content:
+              "You are creating a short and exciting movie trailer. You are outputting only sentences.",
           },
           {
-            "role": "user",
-            "content": `Create a short movie trailer script for the movie titled: ${prompt}`
-          }
-        ]
+            role: "user",
+            content: `Create a short movie trailer script for the movie titled: ${prompt}`,
+          },
+        ],
       },
       {
         headers: {
@@ -117,24 +118,24 @@ app.post("/api/ai", async (req, res) => {
           Authorization: `Bearer ${apiKey}`,
         },
       }
-    );    
-    const voices = ['onyx', 'alloy', 'echo', 'fable', 'nova', 'shimmer'];
+    );
+    const voices = ["onyx", "alloy", "echo", "fable", "nova", "shimmer"];
     const audioResponse = await axios.post(
       "https://api.openai.com/v1/audio/speech",
       {
         model: "tts-1",
         input: `${generatedText.data.choices[0].message.content}`,
         voice: voices[Math.floor(Math.random() * voices.length)],
-        response_format: 'mp3'
+        response_format: "mp3",
       },
       {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${apiKey}`,
         },
-        responseType: 'arraybuffer'
+        responseType: "arraybuffer",
       }
-    );    
+    );
     res.send(audioResponse.data);
   } catch (error) {
     console.error(error);

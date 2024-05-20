@@ -1,7 +1,5 @@
 # Entertainment Web App
 
-## Checkout The Live Project: [HERE!](https://entertainment-app-xi.vercel.app/)
-
 ## Table of contents
 
 - [Overview](#overview)

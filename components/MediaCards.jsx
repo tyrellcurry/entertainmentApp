@@ -43,7 +43,7 @@ export default function MediaCards({
       {trailer && <Trailer title={title} toggleTrailer={toggleTrailer} large={large} />}
       <div className="img">
         <div
-          className="bookmark relative flex justify-end cursor-pointer"
+          className="relative flex justify-end cursor-pointer"
           //Setting mouse events here because this is the card container, this is to darken the img and add a play button
           onMouseEnter={() => {
             setPlayHover(true);
@@ -54,8 +54,10 @@ export default function MediaCards({
             setPlayHover(false);
             setImgHover("");
           }}
-          onClick={() => {
-            setTrailer(true);
+          onClick={(e) => {
+            if (!e.target.classList.contains('bookmark')) {
+              setTrailer(true);
+            }
           }}>
           {/* If playHover is true, display these elements, boolean set in element above */}          
           {playHover && (
@@ -66,7 +68,7 @@ export default function MediaCards({
           )}
           {/* end of playHover */}
           <div
-            className={`bg-x-mirage z-10 absolute w-6 h-6 flex justify-center items-center rounded-full mt-1 mr-1 opacity-70 md:w-10 md:h-10 md:mt-3 md:mr-3 ${bookmarkHover}`}
+            className={`bg-x-mirage z-10 absolute w-6 h-6 flex justify-center items-center rounded-full mt-1 mr-1 opacity-70 md:w-10 md:h-10 md:mt-3 md:mr-3 bookmark ${bookmarkHover}`}
             onClick={(e) => {
               setIsBookmarked(!isBookmarked);
               bookmarked
@@ -96,7 +98,7 @@ export default function MediaCards({
                   : "/assets/icon-bookmark-empty-new.svg"
               }
               alt=""
-              className={`w-2 m-auto md:w-3 ${bookmarkIconHover}`}
+              className={`w-2 m-auto md:w-3 ${bookmarkIconHover} bookmark`}
             />
           </div>
           <img src={small} alt="" className={`block md:hidden rounded-lg`} />

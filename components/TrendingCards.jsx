@@ -43,15 +43,16 @@ const TrendingCards = ({
         className="relative ml-5 rounded-lg cursor-pointer"
         onMouseEnter={() => {
           setPlayHover(true);
-          //'hover-img' is declared in global
           setImgHover("hover-img");
         }}
         onMouseLeave={() => {
           setPlayHover(false);
           setImgHover("");
         }}
-        onClick={() => {
-          setTrailer(true);
+        onClick={(e) => {
+          if (!e.target.classList.contains('bookmark')) {
+            setTrailer(true);
+          }
         }}>
         {/* If playHover is true, display these elements, boolean set in element above */}
         {playHover && (
@@ -88,7 +89,7 @@ const TrendingCards = ({
             </div>
           </div>
           <div
-            className={`bg-x-mirage w-6 h-6 flex justify-self-end rounded-full mr-4 my-2 mx-auto opacity-70 md:w-10 md:h-10 md:mt-3 md:mr-3 absolute ${bookmarkHover}`}
+            className={`bg-x-mirage w-6 h-6 flex justify-self-end rounded-full mr-4 my-2 mx-auto opacity-70 md:w-10 md:h-10 md:mt-3 md:mr-3 absolute bookmark ${bookmarkHover}`}
             onClick={(e) => {
               setIsBookmarked(!isBookmarked);
               bookmarked
@@ -114,7 +115,7 @@ const TrendingCards = ({
                   : "/assets/icon-bookmark-empty-new.svg"
               }
               alt=""
-              className={`w-2 m-auto md:w-3 ${bookmarkIconHover}`}
+              className={`w-2 m-auto md:w-3 ${bookmarkIconHover} bookmark`}
             />
           </div>
         </div>
