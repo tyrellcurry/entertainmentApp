@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
+import Trailer from "./Trailer";
 
 export default function MediaCards({
   small,
@@ -9,7 +10,7 @@ export default function MediaCards({
   rating,
   title,
   mediaID,
-  bookmarked
+  bookmarked,
 }) {
   const [isBookmarked, setIsBookmarked] = useState(bookmarked);
 
@@ -17,24 +18,29 @@ export default function MediaCards({
   const [bookmarkHover, setBookmarkHover] = useState();
   const [bookmarkIconHover, setBookmarkIconHover] = useState();
   const [playHover, setPlayHover] = useState(false);
-  const [imgHover, setImgHover] = useState('');
+  const [imgHover, setImgHover] = useState("");
+  const [trailer, setTrailer] = useState(false);
 
   async function updateIsBookmarked(id, isBookmarked) {
     try {
       const response = await fetch(`http://localhost:8000/data/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ isBookmarked })
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ isBookmarked }),
       });
       const data = await response.json();
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
   }
 
+  const toggleTrailer = () => {
+    setTrailer(!trailer);
+  }
+
   return (
     <div className="card">
+      {trailer && <Trailer title={title} toggleTrailer={toggleTrailer} large={large} />}
       <div className="img">
         <div
           className="bookmark relative flex justify-end cursor-pointer"
@@ -42,14 +48,16 @@ export default function MediaCards({
           onMouseEnter={() => {
             setPlayHover(true);
             //'hover-img' is declared in global
-            setImgHover('hover-img');
+            setImgHover("hover-img");
           }}
           onMouseLeave={() => {
             setPlayHover(false);
-            setImgHover('');
+            setImgHover("");
           }}
-        >
-          {/* If playHover is true, display these elements, boolean set in element above */}
+          onClick={() => {
+            setTrailer(true);
+          }}>
+          {/* If playHover is true, display these elements, boolean set in element above */}          
           {playHover && (
             <div className="hidden md:flex div play-icon absolute bg-x-white bg-opacity-25 px-4 py-2 rounded-full justify-center items-center z-10">
               <img src="/assets/icon-play.svg" alt="" className="w-7 mr-2" />
@@ -59,36 +67,33 @@ export default function MediaCards({
           {/* end of playHover */}
           <div
             className={`bg-x-mirage z-10 absolute w-6 h-6 flex justify-center items-center rounded-full mt-1 mr-1 opacity-70 md:w-10 md:h-10 md:mt-3 md:mr-3 ${bookmarkHover}`}
-            onClick={(e) => 
-              {
-                setIsBookmarked(!isBookmarked)
-                bookmarked ?
-                updateIsBookmarked(mediaID, false)
-                  :
-                updateIsBookmarked(mediaID, true)
-              }}
+            onClick={(e) => {
+              setIsBookmarked(!isBookmarked);
+              bookmarked
+                ? updateIsBookmarked(mediaID, false)
+                : updateIsBookmarked(mediaID, true);
+            }}
             // On mouse enter, if screen is bigger than md, add these classes to the BookmarkIconHover state
             onMouseEnter={() => {
               window.innerWidth > 768
                 ? // Bookmark BG
-                  setBookmarkHover('bg-x-white-bk opacity-100 z-2')
-                : '';
+                  setBookmarkHover("bg-x-white-bk opacity-100 z-2")
+                : "";
               window.innerWidth > 768
                 ? // Bookmark Icon
-                  setBookmarkIconHover('hover-bookmark z-2')
-                : '';
+                  setBookmarkIconHover("hover-bookmark z-2")
+                : "";
             }}
             //remove classes on mouse leave
             onMouseLeave={() => {
-              setBookmarkHover('');
-              setBookmarkIconHover('');
-            }}
-          >
+              setBookmarkHover("");
+              setBookmarkIconHover("");
+            }}>
             <img
               src={
                 isBookmarked
-                  ? '/assets/icon-bookmark-full.svg'
-                  : '/assets/icon-bookmark-empty-new.svg'
+                  ? "/assets/icon-bookmark-full.svg"
+                  : "/assets/icon-bookmark-empty-new.svg"
               }
               alt=""
               className={`w-2 m-auto md:w-3 ${bookmarkIconHover}`}
