@@ -7,7 +7,7 @@ import MediaCards from '../../components/MediaCards';
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`https://entertainment-app-eight.vercel.app/data`)
+  const res = await fetch(`http://localhost:8000/data`)
   const mediaData = await res.json()
 
   // Pass data to the page via props

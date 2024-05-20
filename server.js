@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: 'https://entertainment-app-eight.vercel.app',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200
 };
 
