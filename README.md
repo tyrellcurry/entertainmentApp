@@ -8,8 +8,6 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -25,6 +23,7 @@ Users should be able to:
 - Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
 - Add/Remove bookmarks from all movies and TV series
 - Search for relevant shows on all pages
+- Have a narrated Movie/TV Series trailer generated when the 'Play' button is clicked
 
 ### Screenshot
 
@@ -36,25 +35,12 @@ Users should be able to:
 
 ### Built with
 
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Node.js](https://nodejs.org/en/) -JS Runtime
-- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
-
-### What I learned
-
-- Collaboration utilizing a best practise GIT workflow
-- Working with Next.js
-- Using React Props to pass data between components
-- Working with local JSON data to populate components while designing the app
-- Configuring different hover and click effects using State
-
-### Continued development
-
-This project really helped me gain a better understanding of working with props in React and creating reusable components.
+- [React](https://reactjs.org/) 
+- [Next.js](https://nextjs.org/) 
+- [Node.js](https://nodejs.org/en/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/)
+- [Open AI](https://platform.openai.com/)
 
 ### Useful resources
 
