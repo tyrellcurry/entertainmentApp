@@ -2,6 +2,8 @@
 
 A full stack mock entertainment app utilizing OpenAI built with React and Tailwind on the frontend and MongoBD on the backend.
 
+View a video of the project here: [Mock Entertainment App | Showcase](https://youtu.be/hHi97I-EuT0)
+
 ## Table of contents
 
 - [Overview](#overview)
